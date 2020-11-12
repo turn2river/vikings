@@ -80,7 +80,8 @@ ul {
 }
 
 .menu__list-link:hover,
-.menu__list-link--active {
+.menu__list-link--active,
+.video__btn:hover {
   color: #85ccdc;
   text-decoration: underline;
 }
@@ -170,6 +171,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  counter-increment: number;
 }
 
 .seasons__item:hover .seasons__link {
@@ -186,9 +188,8 @@ ul {
   background: rgba(14, 14, 14, 0.8);
 }
 
-.seasons__item::before {
-  content: "0" counter(number);
-  counter-increment: number;
+.seasons__item::before {  
+  content: counter(number, decimal-leading-zero);
   position: absolute;
   font-weight: bold;
   font-size: 96px;
